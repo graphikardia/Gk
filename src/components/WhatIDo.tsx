@@ -87,22 +87,23 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
+              <h3>CREATIVE</h3>
+              <h4>Brand Identity & Visual Direction</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Crafting distinctive brand identities and visual narratives.
+                From concept to execution, I lead creative direction that
+                resonates with audiences and elevates brands.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+                <div className="what-tags">Brand Strategy</div>
+                <div className="what-tags">Visual Design</div>
+                <div className="what-tags">Content Creation</div>
+                <div className="what-tags">Copywriting</div>
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Adobe Suite</div>
+                <div className="what-tags">Motion Graphics</div>
+                <div className="what-tags">Art Direction</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +127,23 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
+              <h3>MARKETING</h3>
+              <h4>Digital Growth & Strategy</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Driving measurable growth through full-funnel digital marketing.
+                From SEO and paid campaigns to analytics and lead generation,
+                I build strategies that convert.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+                <div className="what-tags">SEO / SEM</div>
+                <div className="what-tags">Social Media</div>
+                <div className="what-tags">Google Ads</div>
+                <div className="what-tags">Email Marketing</div>
+                <div className="what-tags">Analytics</div>
+                <div className="what-tags">Lead Generation</div>
+                <div className="what-tags">Campaign Strategy</div>
+                <div className="what-tags">WordPress</div>
               </div>
               <div className="what-arrow"></div>
             </div>
