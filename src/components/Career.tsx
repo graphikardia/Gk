@@ -15,43 +15,43 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>Digital Marketing Executive</h4>
+                <h5>Reap Benefit</h5>
               </div>
-              <h3>2020</h3>
+              <h3>Early</h3>
             </div>
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Kickstarted a career in digital marketing — managing social media
+              campaigns, content creation, and community engagement to amplify
+              brand awareness for a social impact organisation.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>WordPress Developer & Marketer</h4>
+                <h5>PlutoWebs</h5>
               </div>
-              <h3>2021</h3>
+              <h3>Mid</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Bridged design and digital strategy — building WordPress websites
+              while running SEO, content marketing, and lead generation
+              campaigns for diverse client portfolios.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Creative Lead & Digital Marketing Expert</h4>
+                <h5>Graphikardia</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Leading creative direction and full-funnel digital marketing
+              strategy — overseeing brand identity, campaign execution, SEO,
+              social media, and performance analytics to drive measurable growth.
             </p>
           </div>
         </div>
