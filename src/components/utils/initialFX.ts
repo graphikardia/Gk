@@ -1,5 +1,5 @@
-import { SplitText } from "gsap-trial/SplitText";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { SplitText } from "./splitTextFree";
 import { smoother } from "../Navbar";
 
 export function initialFX() {
@@ -76,9 +76,7 @@ export function initialFX() {
   var landingText4 = new SplitText(".landing-h2-1", TextProps);
   var landingText5 = new SplitText(".landing-h2-2", TextProps);
 
-  // "Marketer" ↔ "Lead" loop
   LoopText(landingText2, landingText3);
-  // "Lead" ↔ "Marketer" loop
   LoopText(landingText4, landingText5);
 }
 
@@ -99,40 +97,40 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       delay: delay,
     },
     0
-  )
-    .fromTo(
-      Text1.chars,
-      { y: 80 },
-      {
-        duration: 1.2,
-        ease: "power3.inOut",
-        y: 0,
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
-    )
-    .fromTo(
-      Text1.chars,
-      { y: 0 },
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay,
-      },
-      0
-    )
-    .to(
-      Text2.chars,
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
-    );
+  );
+  tl.fromTo(
+    Text1.chars,
+    { y: 80 },
+    {
+      duration: 1.2,
+      ease: "power3.inOut",
+      y: 0,
+      stagger: 0.1,
+      delay: delay2,
+    },
+    1
+  );
+  tl.fromTo(
+    Text1.chars,
+    { y: 0 },
+    {
+      y: -80,
+      duration: 1.2,
+      ease: "power3.inOut",
+      stagger: 0.1,
+      delay: delay,
+    },
+    0
+  );
+  tl.to(
+    Text2.chars,
+    {
+      y: -80,
+      duration: 1.2,
+      ease: "power3.inOut",
+      stagger: 0.1,
+      delay: delay2,
+    },
+    1
+  );
 }
