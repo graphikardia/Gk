@@ -76,7 +76,9 @@ export function initialFX() {
   var landingText4 = new SplitText(".landing-h2-1", TextProps);
   var landingText5 = new SplitText(".landing-h2-2", TextProps);
 
+  // "Marketer" ↔ "Lead" loop
   LoopText(landingText2, landingText3);
+  // "Lead" ↔ "Marketer" loop
   LoopText(landingText4, landingText5);
 }
 
