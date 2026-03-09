@@ -1,0 +1,35 @@
+{
+  "name": "Geetha Gokula P | Creative Lead & Digital Marketing Expert",
+  "short_name": "GK | Graphikardia",
+  "description": "Portfolio of Geetha Gokula P — Creative Lead and Digital Marketing Expert at Graphikardia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17",
+  "lang": "en-IN",
+  "scope": "/",
+  "orientation": "any",
+  "categories": ["portfolio", "business", "design"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/preview.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Geetha Gokula P Portfolio — Desktop"
+    }
+  ]
+}
