@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://gk.graphikardia.com/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://gk.graphikardia.com/" />
+    <image:image>
+      <image:loc>https://gk.graphikardia.com/images/preview.png</image:loc>
+      <image:title>Geetha Gokula P – Creative Lead & Digital Marketing Expert</image:title>
+      <image:caption>Portfolio of Geetha Gokula P, Creative Lead at Graphikardia</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About section -->
+  <url>
+    <loc>https://gk.graphikardia.com/#about</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Work / Portfolio section -->
+  <url>
+    <loc>https://gk.graphikardia.com/#work</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services / What I Do section -->
+  <url>
+    <loc>https://gk.graphikardia.com/#services</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Career section -->
+  <url>
+    <loc>https://gk.graphikardia.com/#career</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact section -->
+  <url>
+    <loc>https://gk.graphikardia.com/#contact</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
