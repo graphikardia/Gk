@@ -10,25 +10,22 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:rajeshchittyal21@gmail.com" data-cursor="disable">
-                rajeshchittyal21@gmail.com
+              <a href="mailto:graphikardia@gmail.com" data-cursor="disable">
+                graphikardia@gmail.com
               </a>
             </p>
-            <h4>Education</h4>
-            <p>BSc in Computer Science</p>
+            <h4>Website</h4>
+            <p>
+              <a href="https://gk.graphikardia.com" target="_blank" data-cursor="disable">
+                gk.graphikardia.com
+              </a>
+            </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
+       
             <a
-              href="https://github.com/raxx21"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rajesh-chityal-2a70141b3"
+              href="https://www.linkedin.com/in/gokula"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -36,7 +33,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com/raxx21_official"
+              href="https://x.com/gokula"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -44,7 +41,7 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com/therajeshchityal"
+              href="https://www.instagram.com/mr.gk_gokula"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -54,7 +51,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Rajesh Chityal</span>
+              Designed and Developed <br /> by <span>Geetha Gokula P</span>
             </h2>
             <h5>
               <MdCopyright /> 2025
