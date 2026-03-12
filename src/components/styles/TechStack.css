@@ -1,0 +1,202 @@
+.techstack {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: auto;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, var(--backgroundColor) 0%, rgba(249, 115, 22, 0.02) 50%, var(--backgroundColor) 100%);
+  transition: background 0.5s ease;
+}
+
+.techstack-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.techstack-label {
+  display: inline-block;
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accentColor);
+  margin-bottom: 15px;
+  padding: 10px 24px;
+  background: var(--glassBackground);
+  border: 1px solid var(--glassBorder);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.techstack h2 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--textPrimary);
+  margin: 0 0 10px;
+}
+
+.techstack-header p {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  color: var(--textSecondary);
+}
+
+.tech-canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: grab;
+}
+
+.tech-canvas:active {
+  cursor: grabbing;
+}
+
+/* Modal Styles */
+.tool-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tool-modal {
+  background: var(--backgroundSecondary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cardBorder);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--textMuted);
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--textPrimary);
+}
+
+.modal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tool-modal h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--textPrimary);
+  text-align: center;
+  margin: 0 0 25px;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  border-radius: 12px;
+}
+
+.detail-label {
+  font-family: "Syne", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accentColor);
+}
+
+.detail-value {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  color: var(--textSecondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .techstack {
+    padding: 60px 15px;
+  }
+  
+  .tool-modal {
+    padding: 30px 20px;
+  }
+  
+  .modal-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .tool-modal h3 {
+    font-size: 20px;
+  }
+}

@@ -6,31 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══════════════════════════════════════════
+       SECURITY HEADERS (Hack Prevention)
+  ═══════════════════════════════════════════ -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.worldvectorlogo.com https://cdnjs.cloudflare.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https:; frame-src 'self' https:; media-src 'self' https:;" />
+  
+  <!-- Prevent clickjacking -->
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  
+  <!-- Prevent MIME sniffing -->
+  <meta name="format-detection" content="telephone=no" />
+  
+  <!-- Disable Google indexing for sensitive pages (optional) -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- ═══════════════════════════════════════════
        PRIMARY SEO META TAGS
   ═══════════════════════════════════════════ -->
   <title>Geetha Gokula P | Creative Lead & Digital Marketing Expert — Graphikardia</title>
   <meta name="description" content="Geetha Gokula P is a Creative Lead and Digital Marketing Expert at Graphikardia. Specialising in brand identity, visual design, SEO, social media strategy, and full-funnel digital marketing campaigns that drive measurable growth." />
-  <meta name="keywords" content="Geetha Gokula P, creative lead, digital marketing expert, brand identity, Graphikardia, SEO specialist, social media marketing, content strategy, visual design, digital campaigns, marketing strategist India" />
+  <meta name="keywords" content="Geetha Gokula P, creative lead, digital marketing expert, brand identity, Graphikardia, SEO specialist, social media marketing, content strategy, visual design, digital campaigns, marketing strategist India, brand strategist, digital marketing consultant, Bangalore" />
   <meta name="author" content="Geetha Gokula P" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow" />
-  <link rel="canonical" href="https://gk.graphikardia.com/" />
+  <link rel="canonical" href="https://gokula.graphikardia.com/" />
 
   <!-- ═══════════════════════════════════════════
        GEO META (Location signals)
   ═══════════════════════════════════════════ -->
-  <meta name="geo.region" content="IN" />
-  <meta name="geo.placename" content="India" />
+  <meta name="geo.region" content="IN-KA" />
+  <meta name="geo.placename" content="Bangalore, Karnataka, India" />
   <meta name="language" content="English" />
+  <meta name="city" content="Bangalore" />
+  <meta name="country" content="India" />
+  <meta name="ICBM" content="12.9716, 77.5946" />
+  <meta name="geo.position" content="12.9716;77.5946" />
 
   <!-- ═══════════════════════════════════════════
        OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
   ═══════════════════════════════════════════ -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gk.graphikardia.com/" />
+  <meta property="og:url" content="https://gokula.graphikardia.com/" />
   <meta property="og:title" content="Geetha Gokula P | Creative Lead & Digital Marketing Expert" />
   <meta property="og:description" content="Creative Lead and Digital Marketing Expert specialising in brand identity, SEO, social media strategy, and performance-driven campaigns. Explore the portfolio at Graphikardia." />
-  <meta property="og:image" content="https://gk.graphikardia.com/images/preview.png" />
+  <meta property="og:image" content="https://gokula.graphikardia.com/images/preview.png" />
   <meta property="og:image:alt" content="Geetha Gokula P – Creative Lead & Digital Marketing Expert" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -45,7 +67,7 @@
   <meta name="twitter:creator" content="@gokula" />
   <meta name="twitter:title" content="Geetha Gokula P | Creative Lead & Digital Marketing Expert" />
   <meta name="twitter:description" content="Creative Lead and Digital Marketing Expert at Graphikardia. Brand identity, SEO, social media, and full-funnel digital campaigns." />
-  <meta name="twitter:image" content="https://gk.graphikardia.com/images/preview.png" />
+  <meta name="twitter:image" content="https://gokula.graphikardia.com/images/preview.png" />
   <meta name="twitter:image:alt" content="Geetha Gokula P – Graphikardia" />
 
   <!-- ═══════════════════════════════════════════
@@ -60,6 +82,7 @@
   ═══════════════════════════════════════════ -->
   <meta name="theme-color" content="#0a0e17" />
   <meta name="msapplication-TileColor" content="#0a0e17" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="manifest" href="/manifest.json" />
 
   <!-- ═══════════════════════════════════════════
@@ -71,13 +94,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://gk.graphikardia.com/#person",
+    "@id": "https://gokula.graphikardia.com/#person",
     "name": "Geetha Gokula P",
-    "alternateName": ["GK", "Gokula"],
-    "url": "https://gk.graphikardia.com/",
+    "alternateName": ["GK", "Gokula", "Geetha Gokula"],
+    "url": "https://gokula.graphikardia.com/",
     "image": {
       "@type": "ImageObject",
-      "url": "https://gk.graphikardia.com/images/preview.png",
+      "url": "https://gokula.graphikardia.com/images/profile-new.png",
       "width": 1200,
       "height": 630
     },
@@ -100,14 +123,24 @@
       "Google Ads",
       "Email Marketing",
       "Campaign Strategy",
-      "WordPress Development"
+      "WordPress Development",
+      "Brand Strategy",
+      "Lead Generation",
+      "Analytics",
+      "Figma",
+      "Adobe Creative Suite"
     ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
     "sameAs": [
-      "https://gk.graphikardia.com",
+      "https://gokula.graphikardia.com",
       "https://www.linkedin.com/in/gokula",
-      "https://github.com/gokula",
       "https://x.com/gokula",
-      "https://www.instagram.com/gokula"
+      "https://www.instagram.com/mr.gk_gokula"
     ]
   }
   </script>
@@ -117,19 +150,19 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://gk.graphikardia.com/#website",
-    "url": "https://gk.graphikardia.com/",
+    "@id": "https://gokula.graphikardia.com/#website",
+    "url": "https://gokula.graphikardia.com/",
     "name": "Geetha Gokula P | Graphikardia",
     "description": "Portfolio of Geetha Gokula P — Creative Lead & Digital Marketing Expert at Graphikardia.",
     "publisher": {
-      "@id": "https://gk.graphikardia.com/#person"
+      "@id": "https://gokula.graphikardia.com/#person"
     },
     "inLanguage": "en-IN",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://gk.graphikardia.com/?q={search_term_string}"
+        "urlTemplate": "https://gokula.graphikardia.com/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -141,12 +174,12 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://gk.graphikardia.com/#service",
+    "@id": "https://gokula.graphikardia.com/#service",
     "name": "Geetha Gokula P – Creative & Digital Marketing Services",
-    "url": "https://gk.graphikardia.com/",
+    "url": "https://gokula.graphikardia.com/",
     "description": "Creative direction, brand identity, digital marketing strategy, SEO, social media management, and performance campaigns by Geetha Gokula P.",
     "provider": {
-      "@id": "https://gk.graphikardia.com/#person"
+      "@id": "https://gokula.graphikardia.com/#person"
     },
     "areaServed": {
       "@type": "Country",
@@ -211,25 +244,31 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://gk.graphikardia.com/"
+        "item": "https://gokula.graphikardia.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": "https://gk.graphikardia.com/#about"
+        "item": "https://gokula.graphikardia.com/#about"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Work",
-        "item": "https://gk.graphikardia.com/#work"
+        "name": "Services",
+        "item": "https://gokula.graphikardia.com/#whatido"
       },
       {
         "@type": "ListItem",
         "position": 4,
+        "name": "Work",
+        "item": "https://gokula.graphikardia.com/#work"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
         "name": "Contact",
-        "item": "https://gk.graphikardia.com/#contact"
+        "item": "https://gokula.graphikardia.com/#contact"
       }
     ]
   }
@@ -246,7 +285,7 @@
         "name": "Who is Geetha Gokula P?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Geetha Gokula P is a Creative Lead and Digital Marketing Expert at Graphikardia. She specialises in brand identity, visual design, SEO, social media strategy, and full-funnel digital marketing campaigns."
+          "text": "Geetha Gokula P is a Creative Lead and Digital Marketing Expert at Graphikardia. She specializes in brand identity, visual design, SEO, social media strategy, and full-funnel digital marketing campaigns."
         }
       },
       {
@@ -262,7 +301,7 @@
         "name": "What is Graphikardia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Graphikardia is a creative and digital marketing studio where Geetha Gokula P serves as Creative Lead, delivering brand identity, design, and marketing solutions."
+          "text": "Graphik creative and digital marketingardia is a studio where Geetha Gokula P serves as Creative Lead, delivering brand identity, design, and marketing solutions."
         }
       },
       {
@@ -270,15 +309,15 @@
         "name": "How can I contact Geetha Gokula P?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can reach Geetha Gokula P via email at gk@graphikardia.com or through her portfolio at https://gk.graphikardia.com."
+          "text": "You can reach Geetha Gokula P via email at graphikardia@gmail.com or through her portfolio at https://gokula.graphikardia.com."
         }
       },
       {
         "@type": "Question",
-        "name": "What industries has Geetha Gokula P worked with?",
+        "name": "Where is Geetha Gokula P based?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Geetha Gokula P has worked across social impact, e-commerce, and creative industries, building brands and digital marketing strategies for organisations including Reap Benefit and PlutoWebs."
+          "text": "Geetha Gokula P is based in Bangalore, Karnataka, India, serving clients locally and globally."
         }
       }
     ]
@@ -290,20 +329,20 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://gk.graphikardia.com/#webpage",
-    "url": "https://gk.graphikardia.com/",
+    "@id": "https://gokula.graphikardia.com/#webpage",
+    "url": "https://gokula.graphikardia.com/",
     "name": "Geetha Gokula P | Creative Lead & Digital Marketing Expert",
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": [".landing-intro h1", ".landing-info h3", ".about-me p"]
+      "cssSelector": [".hero-title", ".hero-subtitle", ".about-content p"]
     },
     "isPartOf": {
-      "@id": "https://gk.graphikardia.com/#website"
+      "@id": "https://gokula.graphikardia.com/#website"
     },
     "about": {
-      "@id": "https://gk.graphikardia.com/#person"
+      "@id": "https://gokula.graphikardia.com/#person"
     },
-    "description": "Portfolio of Geetha Gokula P,Founding of Graphikardia.",
+    "description": "Portfolio of Geetha Gokula P - Creative Lead & Digital Marketing Expert at Graphikardia.",
     "inLanguage": "en-IN"
   }
   </script>

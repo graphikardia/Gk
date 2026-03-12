@@ -1,71 +1,392 @@
 .about-section {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  place-items: center;
   position: relative;
-  opacity: 1;
-  height: auto;
+  min-height: 100vh;
   width: var(--cWidth);
+  max-width: 1400px;
   margin: auto;
-}
-.about-me {
-  padding: 50px 0px;
-  padding-bottom: 0;
-  width: 500px;
-  max-width: calc(100% - 15px);
-}
-.about-me h3 {
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-weight: 400;
-  color: var(--accentColor);
+  padding: 120px 20px;
+  background: var(--backgroundColor);
+  transition: background 0.5s ease;
 }
 
-.about-me p {
-  font-size: 33px;
+.about-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-hero-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-label {
+  display: inline-block;
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 36px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accentColor);
+  margin-bottom: 20px;
+  padding: 10px 24px;
+  background: var(--glassBackground);
+  border: 1px solid var(--glassBorder);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.about-hero h2 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--textPrimary);
+  margin: 0 0 25px;
+}
+
+.about-hero .highlight {
+  background: linear-gradient(135deg, var(--accentColor) 0%, var(--gradientEnd) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-intro {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--textSecondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-main-content {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Image Section */
+.about-image-section {
+  position: sticky;
+  top: 120px;
+}
+
+.about-image-card {
+  position: relative;
+}
+
+.about-image-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 30px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+}
+
+.about-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-image-inner:hover .about-profile-img {
+  transform: scale(1.08);
+}
+
+.about-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, var(--shadowColor) 100%);
+}
+
+.about-image-accent {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border: 2px solid var(--accentColor);
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.about-floating-badge {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--glassBackground);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glassBorder);
+  border-radius: 50px;
+  z-index: 10;
+}
+
+.badge-pulse {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+}
+
+.about-floating-badge span:last-child {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--textPrimary);
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-@media only screen and (min-width: 600px) {
-  .about-section {
-    justify-content: center;
+/* Story Section */
+.about-story-section {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.about-story-card {
+  background: var(--cardBackground);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--cardBorder);
+  border-radius: 24px;
+  padding: 35px;
+  transition: all 0.3s ease;
+}
+
+.about-story-card h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--textPrimary);
+  margin: 0 0 20px;
+}
+
+.about-story-card p {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--textSecondary);
+  margin: 0 0 15px;
+}
+
+.about-story-card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-card strong {
+  color: var(--accentColor);
+  font-weight: 600;
+}
+
+/* Awards Section */
+.about-awards-section h4,
+.about-skills-section h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--textMuted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 20px;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.award-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: rgba(249, 115, 22, 0.2);
+  transform: translateY(-3px);
+}
+
+.award-icon {
+  font-size: 28px;
+}
+
+.award-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.award-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--textPrimary);
+  line-height: 1.3;
+}
+
+.award-sub {
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Skills Section */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-pill {
+  padding: 12px 20px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  border-radius: 50px;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--textSecondary);
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: var(--textPrimary);
+  transform: translateY(-2px);
+}
+
+/* CTA Section */
+.about-cta-section {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, var(--accentColor) 0%, var(--gradientEnd) 100%);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(249, 115, 22, 0.4);
+}
+
+.cta-btn.secondary {
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  color: var(--textPrimary);
+}
+
+.cta-btn.secondary:hover {
+  background: var(--secondaryHover);
+  border-color: var(--borderColor);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .about-main-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-image-section {
+    position: relative;
+    top: 0;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta-section {
+    flex-direction: column;
   }
 }
-@media only screen and (min-width: 768px) {
-  .about-me {
-    width: 500px;
-    max-width: calc(100% - 70px);
-    transform: translateY(0%);
-  }
+
+@media (max-width: 600px) {
   .about-section {
-    opacity: 1;
+    padding: 80px 15px;
   }
-}
-@media only screen and (min-width: 1025px) {
-  .about-section {
-    width: var(--cWidth);
-    justify-content: right;
-    max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
-    opacity: 1;
+
+  .about-hero {
+    margin-bottom: 50px;
   }
-  .about-me {
-    padding: 0px;
-    width: 50%;
+
+  .about-label {
+    font-size: 12px;
+    padding: 8px 18px;
   }
-  .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+
+  .about-intro {
+    font-size: 16px;
   }
-}
-@media only screen and (min-width: 1950px) {
-  .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+
+  .about-story-card {
+    padding: 25px;
+  }
+
+  .about-image-inner {
+    border-radius: 24px;
+  }
+
+  .about-image-accent {
+    border-radius: 24px;
+  }
+
+  .about-floating-badge {
+    padding: 12px 22px;
+  }
+
+  .about-floating-badge span:last-child {
+    font-size: 11px;
   }
 }

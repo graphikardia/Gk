@@ -3,6 +3,7 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
+  align-items: center;
   padding: 20px 0px;
   margin-bottom: -100px;
   box-sizing: border-box;
@@ -11,6 +12,42 @@
   transform: translateX(-50%);
   top: 0;
   z-index: 9999;
+  gap: 20px;
+}
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--badgeBackground);
+  border: 1px solid var(--badgeBorder);
+  color: var(--textSecondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: var(--accentColor);
+  transform: rotate(15deg);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: var(--accentColor);
 }
 .header ul {
   font-size: 12px;
@@ -26,7 +63,7 @@
 .header ul li {
   margin-left: 0px;
   letter-spacing: 1px;
-  color: #ccc;
+  color: var(--navText);
   font-weight: 600;
   cursor: pointer;
 }
@@ -55,7 +92,7 @@
     font-size: 14px;
   }
   .header ul li {
-    color: #eae5ec;
+    color: var(--navText);
   }
   .navbar-title {
     font-size: 16px;

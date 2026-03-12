@@ -3,329 +3,375 @@
   position: relative;
   z-index: 1;
   background-color: var(--backgroundColor);
-  padding: 80px 0;
+  padding: 120px 0;
+  transition: background 0.5s ease;
 }
 
 .work-section h2 {
-  font-size: 70px;
-  font-weight: 500;
+  font-family: "Syne", sans-serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
   margin-top: 0;
   margin-bottom: 50px;
+  background: linear-gradient(135deg, var(--textPrimary) 0%, var(--textSecondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .work-section h2>span {
-  color: var(--accentColor);
+  background: linear-gradient(135deg, var(--accentColor) 0%, var(--gradientEnd) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.work-tagline {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  color: var(--textSecondary);
+  margin-top: -30px;
+  margin-bottom: 50px;
 }
 
 .work-container {
   margin: auto;
 }
 
-/* ── Carousel ── */
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-  width: 100%;
-  border-top: 1px solid #363636;
-  border-bottom: 1px solid #363636;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  padding: 50px 0;
-}
-
-.carousel-content {
-  display: flex;
-  align-items: center;
+/* ── Project Showcase ── */
+.project-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
   gap: 60px;
-  width: 100%;
+  align-items: center;
 }
 
-.carousel-info {
-  flex: 1;
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-.carousel-number h3 {
-  font-size: 60px;
-  line-height: 1;
-  margin: 0;
-  font-weight: 600;
-  opacity: 0.3;
-}
-
-.carousel-details {
+.project-content-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 40px;
+}
+
+.project-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.project-number {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.project-number span:first-child {
+  font-family: "Syne", sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  color: var(--accentColor);
+  line-height: 1;
+}
+
+.project-number .total-projects {
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--textMuted);
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-details h3 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--textPrimary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.project-category {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accentColor);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.project-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--textSecondary);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 500px;
+}
+
+.project-tools {
+  margin-top: 10px;
+}
+
+.project-tools .tools-label {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--textMuted);
+  margin-bottom: 12px;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.carousel-details h4 {
-  font-size: 28px;
+.tool-tag {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
   font-weight: 500;
-  margin: 0;
+  padding: 8px 16px;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  border-radius: 25px;
+  color: var(--textSecondary);
+  transition: all 0.3s ease;
 }
 
-.carousel-category {
-  font-weight: 200;
-  color: #adacac;
-  margin: 0;
-  font-size: 16px;
+.tool-tag:hover {
+  background: var(--secondaryHover);
+  border-color: var(--accentColor);
+  color: var(--accentColor);
 }
 
-.carousel-tools {
-  margin-top: 16px;
-}
-
-.carousel-tools .tools-label {
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.6;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.carousel-tools p {
-  font-weight: 200;
-  color: #adacac;
-  margin: 6px 0 0;
-  font-size: 15px;
-}
-
-.carousel-image-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.project-link {
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: var(--accentColor);
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
-/* ── Navigation Arrows ── */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eae5ec;
+.project-link:hover {
+  background: transparent;
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+  transform: translateY(-2px);
+  color: var(--textPrimary);
+}
+
+.project-link svg {
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Project Navigation ── */
+.project-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background: var(--cardBackground);
+  border: 1px solid var(--cardBorder);
+  color: var(--textPrimary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
+  font-size: 20px;
 }
 
-.carousel-arrow:hover {
-  background: rgba(94, 234, 212, 0.15);
+.nav-btn:hover {
+  background: rgba(249, 115, 22, 0.15);
   border-color: var(--accentColor);
   color: var(--accentColor);
-  box-shadow: 0 0 20px rgba(94, 234, 212, 0.15);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
 }
 
-.carousel-arrow-left {
-  left: -70px;
-}
-
-.carousel-arrow-right {
-  right: -70px;
-}
-
-/* ── Dot Indicators ── */
-.carousel-dots {
+.project-dots {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 35px;
+  gap: 10px;
 }
 
-.carousel-dot {
+.project-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--borderColor);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
 }
 
-.carousel-dot:hover {
+.project-dot:hover {
   border-color: var(--accentColor);
-  background: rgba(94, 234, 212, 0.2);
 }
 
-.carousel-dot-active {
+.project-dot.active {
   background: var(--accentColor);
   border-color: var(--accentColor);
-  box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.4);
 }
 
-/* ── Work Image (reused) ── */
-.work-image {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.work-image-in {
+/* ── Project Image ── */
+.project-image-wrapper {
   position: relative;
 }
 
-.work-link {
+.image-link {
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.image-overlay {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: var(--backgroundColor);
-  width: 50px;
-  border-radius: 50px;
-  height: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 25px;
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5),
-    inset 0px 0px 10px 0px #393939;
-  transition: 0.3s;
+  justify-content: center;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.work-image a:hover {
-  color: inherit;
+.image-overlay span {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--textPrimary);
+  padding: 12px 24px;
+  border: 2px solid var(--textPrimary);
+  border-radius: 50px;
 }
 
-.work-image a:hover .work-link {
+.project-image:hover .image-overlay {
   opacity: 1;
 }
 
-.work-image video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  object-fit: cover;
+.project-image:hover {
+  transform: scale(1.02);
 }
 
-.work-image img {
-  max-width: 100%;
-  max-height: 400px;
-  border-radius: 8px;
+.image-frame {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accentColor);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.project-image-wrapper:hover .image-frame {
+  top: 25px;
+  left: 25px;
+  opacity: 0.5;
 }
 
 /* ── Responsive ── */
-@media only screen and (max-width: 1600px) {
-  .carousel-arrow-left {
-    left: -60px;
-  }
-
-  .carousel-arrow-right {
-    right: -60px;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
-  .work-section h2 {
-    font-size: 50px;
-  }
-
-  .carousel-details h4 {
-    font-size: 22px;
-  }
-
-  .carousel-number h3 {
-    font-size: 45px;
-  }
-
-  .carousel-content {
+@media (max-width: 1200px) {
+  .project-showcase {
+    grid-template-columns: 1fr;
     gap: 40px;
   }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
+  
+  .project-image {
+    height: 350px;
   }
 }
 
-@media only screen and (max-width: 1025px) {
-  .carousel-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .carousel-info {
-    width: 100%;
-  }
-
-  .carousel-image-wrapper {
-    width: 100%;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
-  }
-}
-
-@media only screen and (max-width: 900px) {
+@media (max-width: 768px) {
   .work-section {
-    padding: 50px 0;
+    padding: 80px 0;
   }
-
+  
   .work-section h2 {
-    font-size: 40px;
     margin-bottom: 30px;
   }
-
-  .carousel-number h3 {
-    font-size: 35px;
+  
+  .project-number span:first-child {
+    font-size: 50px;
   }
-
-  .carousel-details h4 {
-    font-size: 20px;
+  
+  .project-number .total-projects {
+    font-size: 18px;
   }
-
-  .carousel-content {
-    gap: 20px;
+  
+  .project-image {
+    height: 280px;
   }
-
-  .carousel-slide {
-    padding: 30px 0;
+  
+  .project-details h3 {
+    font-size: 24px;
   }
+  
+  .project-description {
+    font-size: 15px;
+  }
+  
+  .project-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
-  .work-image img {
-    max-height: 250px;
+@media (max-width: 480px) {
+  .project-nav {
+    justify-content: center;
+  }
+  
+  .project-image {
+    height: 220px;
+    border-radius: 12px;
+  }
+  
+  .image-frame {
+    border-radius: 12px;
+    top: 12px;
+    left: 12px;
   }
 }

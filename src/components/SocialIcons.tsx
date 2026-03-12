@@ -1,5 +1,4 @@
 import {
-  FaGithub,
   FaInstagram,
   FaLinkedinIn,
   FaXTwitter,
@@ -60,27 +59,22 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com/gokula" target="_blank">
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a href="https://in.linkedin.com/in/geetha-gokula-635780168" target="_blank">
+          <a href="https://in.linkedin.com/in/geetha-gokula-635780168" target="_blank" rel="noopener noreferrer">
             <FaLinkedinIn />
           </a>
         </span>
         <span>
-          <a href="https://x.com/gokula" target="_blank">
+          <a href="https://x.com/gokula" target="_blank" rel="noopener noreferrer">
             <FaXTwitter />
           </a>
         </span>
         <span>
-          <a href="https://www.instagram.com/mr.gk_gokula" target="_blank">
+          <a href="https://www.instagram.com/mr.gk_gokula" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
+      <a className="resume-button" href="/Geetha_Gokula_P_Resume.pdf" target="_blank" rel="noopener noreferrer">
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />
