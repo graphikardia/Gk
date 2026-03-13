@@ -121,7 +121,14 @@ h6 {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -170,6 +177,20 @@ body {
   width: 100%;
   margin: auto;
   position: relative;
+}
+
+#smooth-wrapper,
+#smooth-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+  #smooth-wrapper,
+  #smooth-content {
+    overflow: visible;
+  }
 }
 
 .container1 {
