@@ -4,6 +4,7 @@
   width: var(--cWidth);
   max-width: 1400px;
   margin: auto;
+  box-sizing: border-box;
   background: var(--backgroundColor);
   transition: background 0.5s ease;
 }

@@ -212,12 +212,14 @@ body {
 }
 
 .techstack {
-  width: 100%;
+  width: var(--cWidth);
+  max-width: 1400px;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   margin: auto;
   padding: 100px 20px;
+  box-sizing: border-box;
   background: linear-gradient(180deg, var(--backgroundColor) 0%, rgba(249, 115, 22, 0.02) 50%, var(--backgroundColor) 100%);
 }
 
@@ -236,6 +238,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   min-width: 300px;
+  box-sizing: border-box;
 }
 
 .techstack-label {
@@ -353,25 +356,41 @@ body {
   .techstack-tools {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  .techstack-header {
+    padding: 30px 20px;
+    min-width: auto;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
   .techstack-tools {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   
   .tech-tool-card {
-    padding: 20px 10px;
+    padding: 15px 10px;
   }
   
   .tech-tool-icon {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
   
   .tech-tool-card span {
     font-size: 10px;
+  }
+  
+  .techstack-header {
+    padding: 25px 15px;
+  }
+  
+  .techstack-label {
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }
 

@@ -5,6 +5,7 @@
   max-width: 1200px;
   margin: auto;
   padding: 120px 20px;
+  box-sizing: border-box;
   background: var(--backgroundColor);
   transition: background 0.5s ease;
 }

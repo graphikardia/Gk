@@ -3,7 +3,11 @@
   position: relative;
   z-index: 1;
   background-color: var(--backgroundColor);
-  padding: 120px 0;
+  padding: 120px 20px;
+  width: var(--cWidth);
+  max-width: 1400px;
+  margin: auto;
+  box-sizing: border-box;
   transition: background 0.5s ease;
 }
 
@@ -326,7 +330,7 @@
 
 @media (max-width: 768px) {
   .work-section {
-    padding: 80px 0;
+    padding: 80px 15px;
   }
   
   .work-section h2 {
@@ -356,6 +360,10 @@
   .project-link {
     width: 100%;
     justify-content: center;
+  }
+  
+  .project-content-wrapper {
+    gap: 25px;
   }
 }
 

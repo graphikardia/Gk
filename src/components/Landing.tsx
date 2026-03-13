@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { PropsWithChildren, useEffect, useRef, useState } from "react";
 import "./styles/Landing.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,77 +7,88 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Landing = ({ children }: PropsWithChildren) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.fromTo(
         ".hero-badge",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8 }
+        { opacity: 1, y: 0, duration: 0.6 }
       )
       .fromTo(
         ".hero-title .hero-line",
-        { opacity: 0, y: 80, rotateX: -40 },
-        { opacity: 1, y: 0, rotateX: 0, duration: 1, stagger: 0.15 },
-        "-=0.4"
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 },
+        "-=0.3"
       )
       .fromTo(
         ".hero-subtitle",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8 },
-        "-=0.5"
+        { opacity: 1, y: 0, duration: 0.5 },
+        "-=0.3"
       )
       .fromTo(
         ".hero-description",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8 },
-        "-=0.4"
+        { opacity: 1, y: 0, duration: 0.5 },
+        "-=0.2"
       )
       .fromTo(
         ".hero-cta-group",
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6 },
-        "-=0.3"
+        { opacity: 1, y: 0, duration: 0.4 },
+        "-=0.2"
       )
       .fromTo(
         ".hero-stats",
         { opacity: 0 },
-        { opacity: 1, duration: 0.6 },
-        "-=0.2"
+        { opacity: 1, duration: 0.4 },
+        "-=0.1"
       );
 
-      gsap.to(".hero-shapes .shape", {
-        y: -30,
-        rotation: 15,
-        duration: 3,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        stagger: 0.2,
-      });
+      if (!isMobile) {
+        gsap.to(".hero-shapes .shape", {
+          y: -20,
+          duration: 4,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          stagger: 0.3,
+        });
 
-      gsap.to(".hero-glow", {
-        scale: 1.15,
-        opacity: 0.15,
-        duration: 4,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
+        gsap.to(".hero-glow", {
+          scale: 1.1,
+          opacity: 0.12,
+          duration: 5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+        });
 
-      gsap.to(".scroll-indicator", {
-        y: 10,
-        duration: 1.5,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
+        gsap.to(".scroll-indicator", {
+          y: 8,
+          duration: 1.5,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+        });
+      }
     }, containerRef);
 
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      ctx.revert();
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, [isMobile]);
 
   const scrollToWork = () => {
     const workSection = document.getElementById("work");

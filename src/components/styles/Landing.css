@@ -11,6 +11,7 @@
   padding: 40px 20px;
   background: var(--backgroundColor);
   transition: background 0.5s ease;
+  will-change: transform;
 }
 
 .hero-bg {
@@ -27,6 +28,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
+  will-change: transform, opacity;
 }
 
 .hero-glow-1 {
@@ -331,7 +333,11 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 30px 15px;
+    padding: 80px 15px 40px;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-badge {
@@ -345,6 +351,11 @@
 
   .hero-title {
     margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
   }
 
   .hero-description {
@@ -365,15 +376,21 @@
   .hero-btn {
     width: 100%;
     justify-content: center;
+    padding: 14px 24px;
+    font-size: 13px;
   }
 
   .hero-stats {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     padding: 20px;
     width: 100%;
     max-width: 100%;
+  }
+  
+  .hero-stat {
+    min-width: 70px;
   }
 
   .hero-stat-divider {
@@ -382,6 +399,10 @@
 
   .stat-value {
     font-size: 28px;
+  }
+  
+  .stat-label {
+    font-size: 10px;
   }
 
   .shape-1,

@@ -22,9 +22,10 @@
 
 .contact-container {
   width: var(--cWidth);
-  max-width: 1920px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 80px 20px 0;
+  box-sizing: border-box;
 }
 
 .contact-header {
