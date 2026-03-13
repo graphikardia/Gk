@@ -331,7 +331,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .about-main-content {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -350,6 +350,22 @@
 
   .about-cta-section {
     flex-direction: column;
+  }
+}
+
+/* Tablet: iPad Portrait */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .about-main-content {
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+  }
+
+  .about-image-section {
+    max-width: 300px;
+  }
+
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

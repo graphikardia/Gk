@@ -298,6 +298,19 @@
   }
 }
 
+/* Tablet: iPad Portrait */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .contact-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-container {
     padding: 60px 15px 0;

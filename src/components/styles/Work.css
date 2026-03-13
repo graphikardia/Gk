@@ -317,6 +317,13 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1400px) {
+  .project-showcase {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+  }
+}
+
 @media (max-width: 1200px) {
   .project-showcase {
     grid-template-columns: 1fr;
@@ -325,6 +332,26 @@
   
   .project-image {
     height: 350px;
+  }
+}
+
+/* Tablet: iPad Portrait */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-showcase {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+  }
+
+  .project-image {
+    height: 320px;
+  }
+
+  .project-number span:first-child {
+    font-size: 60px;
+  }
+
+  .project-details h3 {
+    font-size: 28px;
   }
 }
 

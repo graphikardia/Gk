@@ -352,6 +352,12 @@ body {
   pointer-events: none;
 }
 
+@media (max-width: 1200px) {
+  .techstack-tools {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .techstack-tools {
     grid-template-columns: repeat(3, 1fr);
@@ -403,6 +409,12 @@ body {
 @media screen and (min-width: 768px) {
   body {
     --cWidth: 94%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    --cWidth: calc(100% - 20px);
   }
 }
 

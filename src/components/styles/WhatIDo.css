@@ -211,6 +211,18 @@
   }
 }
 
+/* Tablet: iPad Portrait */
+@media (min-width: 701px) and (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+}
+
 @media (max-width: 700px) {
   .whatIDO {
     padding: 80px 15px;

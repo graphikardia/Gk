@@ -4,11 +4,13 @@
   margin: auto;
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 40px 20px;
+  padding: 120px 20px 60px;
+  box-sizing: border-box;
   background: var(--backgroundColor);
   transition: background 0.5s ease;
   will-change: transform;
@@ -333,64 +335,77 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 80px 15px 40px;
-    min-height: auto;
+    padding: 70px 16px 40px;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 
   .hero-badge {
-    padding: 8px 16px;
-    margin-bottom: 25px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
   }
 
   .hero-badge span {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .hero-title {
-    margin-bottom: 20px;
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 16px;
   }
   
   .hero-subtitle {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2px;
+    margin-bottom: 12px;
   }
 
   .hero-description {
-    font-size: 16px;
-    margin-bottom: 30px;
-    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    padding: 0 5px;
   }
 
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
     max-width: 100%;
-    margin-bottom: 40px;
-    padding: 0 20px;
-    box-sizing: border-box;
+    margin-bottom: 30px;
+    padding: 0;
+    gap: 10px;
   }
 
   .hero-btn {
     width: 100%;
     justify-content: center;
-    padding: 14px 24px;
-    font-size: 13px;
+    padding: 12px 20px;
+    font-size: 12px;
   }
 
   .hero-stats {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 16px;
     width: 100%;
     max-width: 100%;
   }
   
   .hero-stat {
-    min-width: 70px;
+    min-width: 60px;
   }
 
   .hero-stat-divider {
@@ -398,20 +413,82 @@
   }
 
   .stat-value {
-    font-size: 28px;
+    font-size: 24px;
   }
   
   .stat-label {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .shape-1,
   .shape-2,
-  .shape-3 {
+  .shape-3,
+  .shape-4 {
     display: none;
   }
 
   .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-section {
+    padding: 90px 30px 50px;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 6vw, 64px);
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    max-width: 500px;
+  }
+
+  .hero-cta-group {
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .hero-btn {
+    padding: 13px 24px;
+    font-size: 12px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    padding: 20px 30px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .shape-1,
+  .shape-2 {
+    display: none;
+  }
+}
+
+  .hero-stats {
+    gap: 25px;
+    padding: 22px 35px;
+  }
+
+  .stat-value {
+    font-size: 32px;
+  }
+
+  .shape-1,
+  .shape-2 {
     display: none;
   }
 }
