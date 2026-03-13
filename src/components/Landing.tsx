@@ -17,43 +17,43 @@ const Landing = ({ children }: PropsWithChildren) => {
     window.addEventListener("resize", checkMobile);
 
     const ctx = gsap.context(() => {
+      const badge = document.querySelector(".hero-badge");
+      const title = document.querySelector(".hero-title .hero-line");
+      const subtitle = document.querySelector(".hero-subtitle");
+      const description = document.querySelector(".hero-description");
+      const cta = document.querySelector(".hero-cta-group");
+      const stats = document.querySelector(".hero-stats");
+
+      if (!badge && !title && !subtitle && !description && !cta && !stats) {
+        return;
+      }
+
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.fromTo(
-        ".hero-badge",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6 }
-      )
-      .fromTo(
-        ".hero-title .hero-line",
-        { opacity: 0, y: 60 },
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 },
-        "-=0.3"
-      )
-      .fromTo(
-        ".hero-subtitle",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5 },
-        "-=0.3"
-      )
-      .fromTo(
-        ".hero-description",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.5 },
-        "-=0.2"
-      )
-      .fromTo(
-        ".hero-cta-group",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.4 },
-        "-=0.2"
-      )
-      .fromTo(
-        ".hero-stats",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.4 },
-        "-=0.1"
-      );
+      if (badge) {
+        tl.fromTo(badge, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 });
+      }
+      
+      const titleLines = document.querySelectorAll(".hero-title .hero-line");
+      if (titleLines.length > 0) {
+        tl.fromTo(titleLines, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 }, badge ? "-=0.3" : 0);
+      }
+      
+      if (subtitle) {
+        tl.fromTo(subtitle, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+      }
+      
+      if (description) {
+        tl.fromTo(description, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.2");
+      }
+      
+      if (cta) {
+        tl.fromTo(cta, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
+      }
+      
+      if (stats) {
+        tl.fromTo(stats, { opacity: 0 }, { opacity: 1, duration: 0.4 }, "-=0.1");
+      }
 
       if (!isMobile) {
         gsap.to(".hero-shapes .shape", {
