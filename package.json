@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "security": "npm audit --audit-level=high"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@react-three/cannon": "^6.6.0",
