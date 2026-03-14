@@ -72,7 +72,7 @@ const Navbar = () => {
 
     requestAnimationFrame(raf);
 
-    let links = document.querySelectorAll(".header ul a");
+    let links = document.querySelectorAll(".navbar-nav a");
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
@@ -119,102 +119,134 @@ const Navbar = () => {
     closeMobileMenu();
   };
 
+  const SunIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  );
+
+  const MoonIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  );
+
+  const CloseIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  );
+
   return (
     <>
-      <div className={`header ${scrolled ? 'scrolled' : ''}`}>
-        <a href="/#landingDiv" className="navbar-title" data-cursor="disable">
-          GK
-        </a>
-        <ul className="nav-links">
-          <li>
-            <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#whatido" href="#whatido">
-              <HoverLinks text="SERVICES" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#toolkit" href="#toolkit">
-              <HoverLinks text="TOOLKIT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
-            </a>
-          </li>
-        </ul>
-        
-        <button className="theme-toggle desktop-only" onClick={toggleTheme} aria-label="Toggle theme">
-          {isDark ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="5"/>
-              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-          )}
-        </button>
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <a href="/#landingDiv" className="navbar-brand">
+            <span className="navbar-logo">G<span>K</span></span>
+          </a>
 
-        <div className="mobile-header-controls">
-          <button className="mobile-theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle theme">
-            {isDark ? (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="5"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-              </svg>
-            ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-            )}
-          </button>
-          <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle menu">
-            <span className={`hamburger ${mobileMenuOpen ? "open" : ""}`}>
+          <ul className="navbar-nav">
+            <li>
+              <a data-href="#about" href="#about">
+                <HoverLinks text="About" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#whatido" href="#whatido">
+                <HoverLinks text="Services" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#toolkit" href="#toolkit">
+                <HoverLinks text="Toolkit" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#work" href="#work">
+                <HoverLinks text="Work" />
+              </a>
+            </li>
+            <li>
+              <a data-href="#contact" href="#contact">
+                <HoverLinks text="Contact" />
+              </a>
+            </li>
+          </ul>
+
+          <div className="navbar-actions">
+            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+              {isDark ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            <button 
+              className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`} 
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
               <span></span>
               <span></span>
               <span></span>
-            </span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`mobile-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
+
+      <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-header">
+          <span className="mobile-menu-logo">G<span>K</span></span>
+          <button className="mobile-menu-close" onClick={closeMobileMenu} aria-label="Close menu">
+            <CloseIcon />
           </button>
         </div>
-      </div>
 
-      <div className={`mobile-menu-overlay ${mobileMenuOpen ? "open" : ""}`} onClick={closeMobileMenu}></div>
+        <nav className="mobile-menu-nav">
+          <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("#about"); }}>
+            <span className="mobile-menu-number">01</span>
+            <span className="mobile-menu-text">About</span>
+          </a>
+          <a href="#whatido" onClick={(e) => { e.preventDefault(); scrollToSection("#whatido"); }}>
+            <span className="mobile-menu-number">02</span>
+            <span className="mobile-menu-text">Services</span>
+          </a>
+          <a href="#toolkit" onClick={(e) => { e.preventDefault(); scrollToSection("#toolkit"); }}>
+            <span className="mobile-menu-number">03</span>
+            <span className="mobile-menu-text">Toolkit</span>
+          </a>
+          <a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}>
+            <span className="mobile-menu-number">04</span>
+            <span className="mobile-menu-text">Work</span>
+          </a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}>
+            <span className="mobile-menu-number">05</span>
+            <span className="mobile-menu-text">Contact</span>
+          </a>
+        </nav>
 
-      <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
-        <div className="mobile-menu-content">
-          <nav className="mobile-nav">
-            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("#about"); }}>
-              <span className="mobile-nav-number">01</span>
-              <span className="mobile-nav-text">About</span>
-            </a>
-            <a href="#whatido" onClick={(e) => { e.preventDefault(); scrollToSection("#whatido"); }}>
-              <span className="mobile-nav-number">02</span>
-              <span className="mobile-nav-text">Services</span>
-            </a>
-            <a href="#toolkit" onClick={(e) => { e.preventDefault(); scrollToSection("#toolkit"); }}>
-              <span className="mobile-nav-number">03</span>
-              <span className="mobile-nav-text">Toolkit</span>
-            </a>
-            <a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}>
-              <span className="mobile-nav-number">04</span>
-              <span className="mobile-nav-text">Work</span>
-            </a>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}>
-              <span className="mobile-nav-number">05</span>
-              <span className="mobile-nav-text">Contact</span>
-            </a>
-          </nav>
+        <div className="mobile-menu-footer">
+          <button className="mobile-theme-btn" onClick={toggleTheme}>
+            {isDark ? (
+              <>
+                <SunIcon />
+                <span>Light Mode</span>
+              </>
+            ) : (
+              <>
+                <MoonIcon />
+                <span>Dark Mode</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
 
