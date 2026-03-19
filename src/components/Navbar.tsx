@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
@@ -72,7 +73,7 @@ const Navbar = () => {
 
     requestAnimationFrame(raf);
 
-    let links = document.querySelectorAll(".navbar-nav a");
+    let links = document.querySelectorAll(".navbar-nav a[data-href]");
     links.forEach((elem) => {
       let element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
@@ -109,14 +110,6 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (section: string) => {
-    const element = document.querySelector(section);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    closeMobileMenu();
   };
 
   const SunIcon = () => (
@@ -156,29 +149,19 @@ const Navbar = () => {
 
           <ul className="navbar-nav">
             <li>
-              <a data-href="#about" href="#about">
-                <HoverLinks text="About" />
-              </a>
+              <Link to="/">
+                <HoverLinks text="Home" />
+              </Link>
             </li>
             <li>
-              <a data-href="#whatido" href="#whatido">
-                <HoverLinks text="Services" />
-              </a>
-            </li>
-            <li>
-              <a data-href="#toolkit" href="#toolkit">
-                <HoverLinks text="Toolkit" />
-              </a>
-            </li>
-            <li>
-              <a data-href="#work" href="#work">
+              <Link to="/work">
                 <HoverLinks text="Work" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a data-href="#contact" href="#contact">
+              <Link to="/contact">
                 <HoverLinks text="Contact" />
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -210,27 +193,19 @@ const Navbar = () => {
           </button>
         </div>
 
-        <nav className="mobile-menu-nav">
-          <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("#about"); }}>
+          <nav className="mobile-menu-nav">
+          <Link to="/" onClick={closeMobileMenu}>
             <span className="mobile-menu-number">01</span>
-            <span className="mobile-menu-text">About</span>
-          </a>
-          <a href="#whatido" onClick={(e) => { e.preventDefault(); scrollToSection("#whatido"); }}>
+            <span className="mobile-menu-text">Home</span>
+          </Link>
+          <Link to="/work" onClick={closeMobileMenu}>
             <span className="mobile-menu-number">02</span>
-            <span className="mobile-menu-text">Services</span>
-          </a>
-          <a href="#toolkit" onClick={(e) => { e.preventDefault(); scrollToSection("#toolkit"); }}>
-            <span className="mobile-menu-number">03</span>
-            <span className="mobile-menu-text">Toolkit</span>
-          </a>
-          <a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}>
-            <span className="mobile-menu-number">04</span>
             <span className="mobile-menu-text">Work</span>
-          </a>
-          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}>
-            <span className="mobile-menu-number">05</span>
+          </Link>
+          <Link to="/contact" onClick={closeMobileMenu}>
+            <span className="mobile-menu-number">03</span>
             <span className="mobile-menu-text">Contact</span>
-          </a>
+          </Link>
         </nav>
 
         <div className="mobile-menu-footer">
