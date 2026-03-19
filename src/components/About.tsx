@@ -158,8 +158,8 @@ const About = () => {
               connections between brands and their audiences.
             </p>
             <p>
-              Today, as <strong>Social Media Manager at Koshys Group of Institutions</strong> and 
-              <strong> Managing Director at Graphikardia</strong>, I help institutions 
+              Today, as <strong>Managing Director at Graphikardia</strong> and 
+              <strong> Social Media Manager at Koshys Group of Institutions</strong>, I help institutions 
               and businesses discover their unique voice and amplify their digital presence.
             </p>
           </div>

@@ -18,21 +18,21 @@ interface CareerItem {
 const careerData: CareerItem[] = [
   {
     id: 1,
-    role: "Social Media Manager",
-    company: "Koshys Group of Institutions, Bengaluru",
-    period: "2026 – Present",
-    description: "Leading comprehensive social media strategy for educational institutions. Managing brand presence, content creation, campaign execution, and community engagement.",
-    highlights: ["Content Strategy", "Brand Management", "Engagement Growth", "Campaign Analytics"],
-    icon: "🎓"
-  },
-  {
-    id: 2,
     role: "Managing Director",
     company: "Graphikardia",
     period: "2024 – Present",
     description: "Leading digital strategy and creative direction — overseeing brand identity, campaign execution, social media, and performance analytics to drive measurable growth.",
     highlights: ["Doubled account visibility 12k→24k", "40% unique reach increase", "4,000+ views per video"],
     icon: "◈"
+  },
+  {
+    id: 2,
+    role: "Social Media Manager",
+    company: "Koshys Group of Institutions, Bengaluru",
+    period: "2026 – Present",
+    description: "Leading comprehensive social media strategy for educational institutions. Managing brand presence, content creation, campaign execution, and community engagement.",
+    highlights: ["Content Strategy", "Brand Management", "Engagement Growth", "Campaign Analytics"],
+    icon: "🎓"
   },
   {
     id: 3,

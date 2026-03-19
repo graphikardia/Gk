@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
 import gsap from "gsap";
@@ -32,10 +32,6 @@ const storyFrames = [
     text: "I'm Geetha Gokula P", 
     sub: "Creative Lead & Digital Storyteller",
   },
-  { 
-    text: "Crafting experiences that inspire", 
-    sub: "Scroll to explore",
-  },
 ];
 
 const Loading = ({ percent }: { percent: number }) => {
@@ -43,6 +39,72 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [storyIndex, setStoryIndex] = useState(0);
   const [exitAnimation, setExitAnimation] = useState(false);
+  const [displayedName, setDisplayedName] = useState("");
+  const [displayedSurname, setDisplayedSurname] = useState("");
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const fullName = "GEETHA";
+  const surname = "GOKULA P";
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    
+    tl.fromTo(".loading-bg-effects", 
+      { opacity: 0 },
+      { opacity: 1, duration: 0.8, ease: "power2.out" }
+    )
+    .fromTo(".loading-logo-wrapper", 
+      { opacity: 0, scale: 0.5, rotate: -180 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 1, ease: "back.out(1.7)" },
+      "-=0.3"
+    )
+    .fromTo(".loading-name", 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+      "-=0.4"
+    )
+    .fromTo(".loading-story", 
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      "-=0.3"
+    )
+    .fromTo(".loading-progress-wrapper", 
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      "-=0.3"
+    )
+    .fromTo(".loading-footer", 
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+      "-=0.2"
+    );
+
+    let charIndex = 0;
+    const nameInterval = setInterval(() => {
+      if (charIndex <= fullName.length) {
+        setDisplayedName(fullName.slice(0, charIndex));
+        charIndex++;
+      } else {
+        clearInterval(nameInterval);
+        setTimeout(() => {
+          let surnameIndex = 0;
+          const surnameInterval = setInterval(() => {
+            if (surnameIndex <= surname.length) {
+              setDisplayedSurname(surname.slice(0, surnameIndex));
+              surnameIndex++;
+            } else {
+              clearInterval(surnameInterval);
+            }
+          }, 80);
+        }, 200);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(nameInterval);
+    };
+  }, []);
 
   useEffect(() => {
     if (percent >= 100) {
@@ -50,8 +112,8 @@ const Loading = ({ percent }: { percent: number }) => {
         setExitAnimation(true);
         setTimeout(() => {
           setIsLoading(false);
-        }, 1200);
-      }, 1200);
+        }, 1500);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [percent, setIsLoading]);
@@ -59,7 +121,7 @@ const Loading = ({ percent }: { percent: number }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setStoryIndex((prev) => (prev < storyFrames.length - 1 ? prev + 1 : prev));
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -73,45 +135,56 @@ const Loading = ({ percent }: { percent: number }) => {
     if (exitAnimation) {
       gsap.to(".loading-content", {
         opacity: 0,
-        y: -30,
-        duration: 0.6,
-        ease: "power2.inOut"
+        y: -50,
+        scale: 0.9,
+        duration: 0.8,
+        ease: "power3.in"
       });
       gsap.to(".loading-screen", {
         opacity: 0,
-        scale: 1.05,
-        duration: 0.8,
-        ease: "power2.inOut"
+        scale: 1.1,
+        duration: 1,
+        ease: "power3.in"
+      });
+      gsap.to(".loading-bg-effects", {
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.in"
       });
     }
   }, [exitAnimation]);
 
   return (
-    <div className={`loading-screen ${exitAnimation ? 'exiting' : ''}`}>
+    <div className={`loading-screen ${exitAnimation ? 'exiting' : ''}`} ref={containerRef}>
       <div className="loading-bg-effects">
         <div className="loading-orb loading-orb-1"></div>
         <div className="loading-orb loading-orb-2"></div>
         <div className="loading-orb loading-orb-3"></div>
         
         <div className="loading-particles">
-          {[...Array(25)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <div 
               key={i} 
               className="particle" 
               style={{
                 left: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${5 + Math.random() * 5}s`,
-                width: `${2 + Math.random() * 3}px`,
-                height: `${2 + Math.random() * 3}px`,
+                animationDuration: `${4 + Math.random() * 6}s`,
+                width: `${2 + Math.random() * 4}px`,
+                height: `${2 + Math.random() * 4}px`,
               }}
-            ></div>
+            />
           ))}
         </div>
         
         <div className="loading-grid"></div>
-        <div className="loading-scanlines"></div>
+        <div className="loading-lines">
+          {[...Array(5)].map((_, i) => (
+            <div key={i} className="horizontal-line" style={{ top: `${20 + i * 15}%` }} />
+          ))}
+        </div>
         <div className="loading-radial"></div>
+        <div className="loading-vignette"></div>
       </div>
 
       <div className="loading-content">
@@ -120,23 +193,38 @@ const Loading = ({ percent }: { percent: number }) => {
             <div className="logo-inner">
               <span className="logo-text">GK</span>
               <div className="logo-glow"></div>
+              <div className="logo-sparkle sparkle-1"></div>
+              <div className="logo-sparkle sparkle-2"></div>
+              <div className="logo-sparkle sparkle-3"></div>
             </div>
             <div className="logo-ring"></div>
             <div className="logo-ring ring-2"></div>
             <div className="logo-ring ring-3"></div>
+            <div className="logo-orbit">
+              <div className="orbit-dot"></div>
+            </div>
           </div>
+          <div className="logo-shadow"></div>
         </div>
 
         <div className="loading-name">
-          <h1>GEETHA</h1>
-          <h2>GOKULA P</h2>
+          <h1 className="name-line">
+            <span className="name-char">{displayedName}</span>
+            <span className="cursor">|</span>
+          </h1>
+          <h2 className="surname-line">
+            <span className="surname-char">{displayedSurname}</span>
+          </h2>
+          <div className="name-underline"></div>
         </div>
 
         <div className="loading-story">
           <div className="story-text-container">
+            <div className="story-quote-mark">"</div>
             <p className="story-text" key={storyIndex}>
               {storyFrames[storyIndex].text}
             </p>
+            <div className="story-quote-mark closing">"</div>
             <span className="story-sub">{storyFrames[storyIndex].sub}</span>
           </div>
           
@@ -145,7 +233,7 @@ const Loading = ({ percent }: { percent: number }) => {
               <span 
                 key={i} 
                 className={`dot ${i <= storyIndex ? 'active' : ''}`}
-              ></span>
+              />
             ))}
           </div>
         </div>
@@ -156,13 +244,23 @@ const Loading = ({ percent }: { percent: number }) => {
               <div 
                 className="progress-fill" 
                 style={{ width: `${Math.min(percent, 100)}%` }}
-              ></div>
+              >
+                <div className="progress-inner"></div>
+              </div>
             </div>
             <div className="progress-glow"></div>
+            <div className="progress-markers">
+              <span className="marker" style={{ left: '25%' }}></span>
+              <span className="marker" style={{ left: '50%' }}></span>
+              <span className="marker" style={{ left: '75%' }}></span>
+            </div>
           </div>
           
           <div className="progress-info">
-            <span className="percent">{percent}%</span>
+            <div className="progress-percent">
+              <span className="percent-value">{Math.min(percent, 100)}</span>
+              <span className="percent-symbol">%</span>
+            </div>
             <span className="status">
               {percent < 25 && "Initializing..."}
               {percent >= 25 && percent < 50 && "Loading assets..."}
@@ -172,13 +270,20 @@ const Loading = ({ percent }: { percent: number }) => {
             </span>
           </div>
         </div>
+
+        <div className="loading-divider">
+          <span className="divider-line"></span>
+          <span className="divider-icon">✦</span>
+          <span className="divider-line"></span>
+        </div>
       </div>
 
       <div className="loading-footer">
         <div className="footer-content">
           <div className="brand-tag">
-            <span className="brand-icon">✦</span>
-            <span className="brand-name">Graphikardia</span>
+            <span className="brand-icon">◆</span>
+            <span className="brand-name">GRAPHIKARDIA</span>
+            <span className="brand-icon">◆</span>
           </div>
           <div className="role-tags">
             <span>Digital Marketing</span>
@@ -187,8 +292,16 @@ const Loading = ({ percent }: { percent: number }) => {
             <span className="dot">•</span>
             <span>Creative Direction</span>
           </div>
+          <div className="footer-year">
+            <span>EST. 2024</span>
+          </div>
         </div>
       </div>
+
+      <div className="corner-accent top-left"></div>
+      <div className="corner-accent top-right"></div>
+      <div className="corner-accent bottom-left"></div>
+      <div className="corner-accent bottom-right"></div>
     </div>
   );
 };
